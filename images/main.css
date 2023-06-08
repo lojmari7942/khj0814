@@ -1,0 +1,365 @@
+@charset "utf-8";
+/* root variables */
+:root {
+    --color-white: #fff;
+    --color-light: #f4f4f4;        /* background color */ 
+    --color-dark: #525252;        /*text-color*/
+    --color-black: #141415;       /*text-color -h1,h2,h3*/
+    --color-primary: #f24e1e;
+    --color-primary-light: hsl(14,89%, 53%, 12%);
+    --color-success: #29f5a6;
+    --color-warning: #ffce31;
+    --transition: all 300ms ease;
+}
+/* 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul, li {
+    list-style:none;
+}
+a {
+    text-decoration: none;
+    color: #ccc;
+    font-family: 'AvenirNextLTPro-Bold';
+}
+a:hover {
+    color: #0acdce;
+}
+
+/* 공통클래스 */
+body {
+    background-color: #eaeaea;
+}
+.wrap {
+    width: 100%;
+    padding-bottom: 81px;
+    position: relative;
+    
+}
+h2 {
+    font-size: 31px;
+    font-family: 'AvenirNextLTPro-Bold';
+    text-transform: uppercase;
+    letter-spacing: -1.5px;
+    margin-bottom: 10px;
+    color: #0acdce;
+}
+.container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    color: #333;
+}
+section {
+    height: 800px;
+    padding: 50px 0;
+    background-color: #232628;
+}
+/* 모바일 메뉴 버튼 */
+.mobile-btn {
+    position: fixed;
+    right: 42px; top: 50px;
+    width: 28px;
+    height: 22px;
+    z-index: 999;
+    display: none;
+}
+.mobile-btn span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #333;
+    border-radius: 4px;
+}
+.mobile-btn span.scroll {
+    background-color: #fff;
+}
+.mobile-btn .line {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0; 
+    transition: var(--transition);   
+}
+.mobile-btn .line-top {
+    position: absolute;
+    top:0;
+    left:0;  
+    transition: var(--transition);    
+}
+.mobile-btn .line-bottom {
+    position: absolute;
+    bottom:0;
+    left:0;  
+    transition: var(--transition);    
+}
+.mobile-btn-active .line {
+    width: 0;
+}
+.mobile-btn-active .line-top {
+    top:50%;
+    transform: rotate(45deg);
+}
+.mobile-btn-active .line-bottom {
+    top:50%;
+    transform: rotate(-45deg);
+}
+/* mobile menu영역 */
+.nav-mobile {
+    position: fixed;
+    /* top: 0px; */
+    top: 114px;
+    right: -320px;    
+    width: 320px;
+    height: 100vh;
+    background-color: var(--color-white);
+    box-shadow: 16px 0 32px var(--color-primary-light);
+    z-index: 998;
+    transition: var(--transition);
+}
+/* 모바일메뉴 활성화 */
+.nav-mobile.active {
+    right: 0;
+}
+.nav-mobile.scroll {
+    background: rgba(1,1,1,0.5);
+}
+.nav-mobile.scroll li {
+    opacity: 0.9;
+}
+.nav-mobile.scroll li a{
+    color: var(--color-white);
+    font-weight: bold;
+}
+
+.menu-mobile {
+    /* padding-top: 114px; */
+}
+.menu-mobile li {
+    height: 74px;
+    width: 100%;
+}
+.menu-mobile li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 74px;
+    text-align: center;
+    color: var(--color-black); 
+}
+.menu-mobile li:hover a {
+    color: var(--color-primary);
+}
+.menu-mobile li.active a {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+.layer-mask {
+    position:fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 98;
+    background-color: rgb(0,0,0);
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);    
+}
+.layer-mask.active {
+    opacity: 0.3;
+    visibility: visible;
+}
+/* 헤더영역 */
+header {
+    position: fixed;
+    width: 100%;
+    height: 114px;
+    top:0; left: 0;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+    z-index: 99;
+}
+header:hover {
+    background-color: #181818;
+}
+
+header h1 img {
+    display: block;
+    width: 180px;
+    height: 110px;
+}
+header.show-box-shadow {
+    box-shadow: 0 9.6px 16px var(--color-primary-light);
+    background-color: rgba(1,1,1,0.7);
+    border:none;
+    
+}
+header .container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header h1 {
+    font-size: 42px;
+    font-family: 'AvenirNextLTPro-Bold';
+    letter-spacing: -1.5px;
+}
+header h1 a {}
+
+/* navigation영역 */
+header nav {
+    /* margin-top: 60px; */
+}
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav ul li {
+
+}
+
+nav ul li a {
+    display: block;
+    padding: 10px 20px;
+    font-size: 18px;
+}
+header.show-box-shadow nav ul li a {
+    color: #fff;
+    
+}
+nav ul li.on a{
+    font-weight: 600;
+    color: #000;
+}
+
+/* 메인영역 */
+main {
+    position: relative;
+    margin-top:114px;
+    background-color: #232628;
+}
+#profile {
+    background-color: #232628;
+}
+#work {
+    background-color: #232628;
+}
+#contact {
+    background-color: #232628;
+}
+/* contact 영역 */
+.contact {
+    width: 100%;
+    background-color: #232628;
+}
+
+.contact .overlay {
+    width: 100%;
+    /* height: 100%; */
+    /* padding: 10rem 0 7rem; */
+    margin-bottom: 20px;
+}
+
+.contact .container {
+    /* padding: 0 10%; */
+    width: 40%;
+    background-color: #232628;
+}
+
+.contact .container h2 {
+    color: #fff;
+    font-size: 3.8rem;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.contact .container p {
+    text-align: center;
+    color: #fff;
+    margin-top: 0.5rem;
+    opacity: 0.8;
+}
+
+.contact form {
+    margin-top: 3rem;
+}
+
+.contact form input,
+.contact form textarea {
+    display: block;
+    width: 100%;
+    padding: 1.6rem;
+    margin: 0.5rem 0;
+    border: 1px solid #fff;
+    outline: 0;
+    color: #fff;
+    background: transparent;
+    border-radius: 5px;
+}
+
+.contact form textarea {
+    height: 10rem;
+}
+
+.contact form input::placeholder,
+.contact form textarea::placeholder {
+    color: #fff;
+}
+.contact .container.Submit {
+    width: 70;
+    height: 50px;
+}
+.container .icon img {
+    width: 50px;
+    height: 50px;
+}
+.container .icon span {
+    position: absolute;
+    font-family: 'The Jamsil OTF 5 Bold';
+    color: #ccc;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+/* 푸터영역 */
+footer {
+    margin-top: 100px;
+}
+footer p {
+    font-family: 'The Jamsil OTF 5 Bold';
+    font-weight: bold;
+    font-size: 30px;
+    text-align: center;
+
+}
+
+/* responsive */
+@media screen and (max-width: 1240px) {
+    .container {
+        width: 96%;        
+    }
+}
+@media screen and (max-width: 960px) {
+    header nav {
+        display: none;
+    }
+    .mobile-btn {
+        display: block;
+    }
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>포트폴리오 사이트</title>
+    <link rel="stylesheet" href="css/main.css">
+    <!-- jquery lib -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script defer src="js/main.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <!-- mobile menu button -->
+        <a href="#" class="mobile-btn">
+            <span class="line-top"></span>
+            <span class="line"></span>
+            <span class="line-bottom"></span>
+        </a>
+        <!-- mobile menu -->
+        <div class="nav-mobile">
+            <ul class="menu-mobile">
+                <li class="active"><a href="#About">About</a></li>
+                <li><a href="#profile">profile</a></li>
+                <li><a href="#work">work</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+        </div>
+        <!-- mobile menu mask -->
+        <div class="layer-mask"></div>
+        <!-- header --> 
+        <header>
+            <div class="container">
+                <h1><a href="#home">
+                    <img src="../images/pinterest_board_photo.png" alt="">
+                </a></h1>
+                <nav>
+                    <ul>
+                        <li><a href="#About">About</a></li>
+                        <li><a href="#Work">work</a></li>
+                        <li><a href="#Portfolio">profile</a></li>
+                        <li><a href="#Contact">contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- main -->
+        <main>
+            <!-- home -->
+            <section id="About" class="item">
+                <div class="container">
+                    <h2>About</h2>
+                    <p>main banner</p>
+                </div>
+            </section>
+
+            <!-- work -->
+            <section id="Work" class="item">
+                <div class="container">
+                    <h2>Work</h2>
+                    <p>이력 및 경력</p>   
+                </div>
+            </section>
+            <!-- profile -->
+             <section id="Portfolio" class="item">
+                 <div class="container">
+                     <h2>Portfolio</h2>
+                     <p>작업물</p>
+                 </div>
+             </section>
+            <!-- contact -->
+
+            <section id="Contact" class="item">
+                <div class="container">
+                    <h2>Contact</h2>
+                    <section class="contact" id="contact">
+                        <div class="overlay">
+                            <div class="container">
+                            <h2>Let's Talk</h2>
+                            <form action="https://formspree.io/f/mayzgyzn" method="POST">
+                                <input type="text" name="Name" placeholder="Name" required>
+                                <input type="email" name="Email" placeholder="Email" required>
+                                <input type="text" name="Subject" placeholder="Subject" required>
+                                <textarea name="Message" required></textarea>
+                                <input type="submit" value="Submit" class="btn btn-primary">
+                            </form>
+                            </div>
+                        </div>
+                </div> 
+                    </section>
+                    <!-- <p>contact 정보</p> -->
+                    <section>
+                        <div class="contact">
+                            <div class="container">
+                                <div class="icon">
+                                    <img src="../images/그림1.png" alt="">
+                                    <span>lojmari7942</span>
+                                </div>
+                            </div>
+                            <div class="icon">
+                                <img src="../images/그림3.png" alt="">
+                                <span>010.6284.8352</span>
+                            </div>
+                            <div class="icon">
+                                <img src="../images/그림4.png" alt="">
+                                <span>lojmari7942@naver.com</span>
+                            </div>
+                        </div>
+                    </section>
+
+
+            </section>
+        </main>
+        <!-- footer -->
+        <footer>
+            <div>
+                <p>본 페이지는 상업적 목적이 아닌 개인 포트폴리오용으로 제작되었습니다.</p>
+                <p>© 2023 Kim Hyun jin. All Rights Reserved</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
